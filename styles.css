@@ -1,0 +1,180 @@
+:root {
+    /* Primary color*/
+    --primary-50:#FEFCF5;
+    --primary-100:#FEF8E1;
+    --primary-200:#FEF4CD;
+    --primary-300:#FEF0B9;
+    --primary-400:#FEECA5;
+    --primary-500:#FEE891;
+    --primary-600:#FEE47D;
+    --primary-700:#FEE069;
+    --primary-800:#FEDC55;
+    --primary-900:#FED841;
+    --primary-950:#FED638;
+
+
+    /* Secundary color*/  
+    --secundary-950:#00FFCC;
+
+    /* Basic color*/
+    --white: #fff;
+    --black: #000;
+    --gray-950: #101010;
+    --gray-900: #262626;
+    --gray-800: #3B3B3B;
+    --gray-700: #515151;
+    --gray-600: #676767;
+    --gray-500: #7D7D7D;
+    --gray-400: #929292;
+    --gray-300: #A8A8A8;
+    --gray-200: #BEBEBE;
+    --gray-100: #D4D4D4;
+    --gray-50: #E9E9E9;
+
+    /* Font-family */
+    --main-font: Helvetica, Arial, sans-serif;
+
+    /* Font-size */
+    --font-size-h1-plus-plus: 4.8rem;
+    --font-size-h1-plus: 4.0rem;
+    --font-size-h1: 3.2rem;
+    --font-size-h2: 2.4rem;
+    --font-size-h3: 2.0rem;
+    --font-size-h4: 1.6rem;
+}
+
+/* Tipografía y reset básico */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Helvetica,Arial,sans-serif;margin:0;color:#111;background:#fff}
+
+.brand-left{
+  /* flex:0 0 60px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 128px;   /* o 128px según prefieras */
+  height: 128px;
+  object-fit: contain; /* mantiene proporción sin deformar */  
+}
+
+.marca {
+  margin: 0 auto;
+}
+
+/* Top bar */
+.topbar{display:flex;align-items:center;padding:12px 18px;border-bottom:1px solid #eee}
+
+.brand-center{
+  flex:1;
+  text-align:center;
+  font-weight:700;
+  font-size: 48px;
+  margin-right: 100px;
+}
+
+
+.javier {
+  color: var(--gray-600);
+  margin-left: 50px;
+}
+
+
+.container{max-width:980px;margin:24px auto;padding:0 16px}
+.wizard-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.title{font-size:24px;margin:0}
+.subtitle{font-size:14px;color:#666;margin-top:6px}
+
+
+.steps{display:flex;gap:8px;padding:0;margin:12px 0 18px;list-style:none}
+.steps li{flex:1;padding:8px 10px;border-radius:8px;border:1px solid #ddd;background:#fafafa;text-align:center;font-size:13px}
+.steps li.active{background:#00B14D;color:#fff;border-color:#00963c}
+
+
+.step{padding:8px 0}
+.hidden{display:none}
+
+
+label{display:block;margin:10px 0 6px;font-weight:600}
+input[type="number"],select,textarea,input[type="text"]{width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;font-size:14px}
+textarea{min-height:100px;resize:vertical}
+
+
+.actions{display:flex;gap:24px;margin-top:12px}
+.btn{padding:12px 24px;border:1px solid #ccc;border-radius:8px;background:#fff;cursor:pointer}
+.btn.primary{background:#00B14D;color:#fff;border-color:#00A343}
+.btn.ghost{background:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+
+
+.playerLog{margin-top:14px}
+.playerLog ul{list-style:none;padding:0;margin:0;max-height:160px;overflow:auto;border-top:1px solid #eee}
+.playerLog li{padding:10px;border-bottom:1px solid #f4f4f4;font-size:14px}
+
+
+#reviewTable{width:100%;border-collapse:collapse}
+#reviewTable th,#reviewTable td{padding:8px;text-align:left;border-bottom:1px solid #f4f4f4}
+
+.hint {
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+.footer{text-align:center;padding:18px;color:#777}
+
+
+/* Responsive */
+@media (max-width:600px){
+.steps{flex-direction:column}
+.brand-center{font-size:16px}
+}
+
+
+/* Print styles: results formatted nicely */
+@media print{
+body{background:white}
+.topbar,.footer,.actions,.steps{display:none}
+.wizard-card{border:none;box-shadow:none}
+}
+
+.footer {  
+    text-align: center;
+  }
+  
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }  
+
+  .footer__highlight {
+    font-weight: bold;
+    color: var(--secundary-950);
+  }
+
+  .footer__text,
+  .footer__link,
+  .footer__license {
+    margin: 0 auto;
+  }
+  
+  .footer__link {
+    color: var(--gray-800);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer__link:hover {
+    color: var(--black);
+  }
+  
+  .footer__image {
+    width: 66px;
+    height: 22px;
+  }
+  

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rico programar — Sorteo de Equipos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-left">
+      <!-- <div class="logo" aria-hidden="true">RP</div> -->
+       <img src="Logo sin fondo 1.png" alt="Logo Rico Programar" class="logo-img">
+       <p class="marca">Rico Programar</p>
+    </div>
+    <div class="brand-center">Copa Navideña CDITI<Span class="javier"> Javier Luna - 2025</Span> </div>
+  
+  </header>
+
+  <main class="container">
+    <section class="wizard-card">
+      <h1 class="title">Sorteo de equipos</h1>
+      <p class="subtitle">Sigue los pasos para crear y sortear equipos balanceados</p>
+
+      <div id="wizard">
+        <ol class="steps" id="stepIndicators">
+          <li class="active">1. Configuración</li>
+          <li>2. Agregar jugadores</li>
+          <li>3. Revisar</li>
+          <li>4. Sortear</li>
+        </ol>
+
+        <section class="step" data-step="1">
+          <label for="numTeams">Cantidad de equipos</label>
+          <input id="numTeams" type="number" min="2" value="2" />
+          <div class="hint">Máximo recomendado: 16 equipos. Valida que haya jugadores suficientes.</div>
+          <div class="actions">
+            <button id="toStep2" class="btn primary">Siguiente</button>
+            <button id="cancelBtn" class="btn ghost">Cancelar</button>
+          </div>
+        </section>
+
+        <section class="step hidden" data-step="2">
+          <h3>Agregar jugadores (por lotes)</h3>
+          <label for="batchTextarea">Pegar/Escribir nombres — un jugador por línea</label>
+          <textarea id="batchTextarea" placeholder="Ej: Juan Pérez"></textarea>
+          <label for="batchPosition">Posición del lote</label>
+          <select id="batchPosition">
+            <option value="ARQ">Arquero / Guardameta</option>
+            <option value="DFC">Defensa central</option>
+            <option value="DFL">Defensa lateral</option>
+            <option value="MED">Mediocampista</option>
+            <option value="DEL">Delantero</option>
+          </select>
+          <label><input type="checkbox" id="batchIsCaptain"/> Marcar todos como capitanes (si aplica)</label>
+          <div class="actions">
+            <button id="addBatch" class="btn">Agregar lote</button>
+            <button id="toStep1" class="btn ghost">Volver</button>
+            <button id="toStep3" class="btn primary">Siguiente</button>
+          </div>
+          <div class="playerLog">
+            <h4>Jugadores agregados</h4>
+            <ul id="playersList"></ul>
+          </div>
+        </section>
+
+        <section class="step hidden" data-step="3">
+          <h3>Revisión</h3>
+          <p>Verifica la lista de jugadores, posiciones y capitanes. Puedes editar o eliminar entradas.</p>
+          <div id="reviewTableWrap">
+            <table id="reviewTable">
+              <thead>
+                <tr><th>Nombre</th><th>Posición</th><th>Capitán</th><th>Acciones</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="actions">
+            <button id="toStep2b" class="btn ghost">Volver</button>
+            <button id="toStep4" class="btn primary">Sorteo</button>
+          </div>
+        </section>
+
+        <section class="step hidden" data-step="4">
+          <h3>Equipos Generados</h3>
+          <div id="results"></div>
+          <div class="actions">
+            <button id="restart" class="btn">Regresar al inicio</button>
+            <button id="printBtn" class="btn">Imprimir / Guardar como PDF</button>
+            <button id="downloadJson" class="btn">Descargar (JSON)</button>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- <footer class="footer">Hecho con ❤️ por Rico programar</footer> -->
+   <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">
+            RicoProgramar by - <span class="footer__highlight">Ing. Edwar Velásquez</span>
+          </p>
+          <p class="footer__license">
+            © 2025 - Licenciado bajo 
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" class="footer__link">
+              Creative Commons Attribution 4.0 International (CC BY 4.0)
+              <img 
+              src="https://licensebuttons.net/l/by/4.0/88x31.png" 
+              alt="Licencia Creative Commons Attribution 4.0"
+              class="footer__image"
+            />
+            </a>
+          </p>
+        </div>
+    </footer>  
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
